@@ -34,5 +34,13 @@
     "title": "第一个 GitHub 项目 — 个人名片",
     "content": "完成了人生第一个 GitHub 项目 my-card。完整的流程：创建 HTML/CSS 代码 → 用 GitHub Desktop 添加仓库 → Commit → Push → 启用 GitHub Pages → 获得公网链接 top1331.github.io/my-card。",
     "tags": ["GitHub", "HTML", "CSS"]
-  }
+  },
+  {
+    "date": "2026-05-27",
+    "title": "学会了vs code和github联用",
+    "content": "网站托管在 GitHub Pages 上，它展示的是 GitHub 仓库里的代码。所以流程是这样的：\n1.改代码（本地文件）→ 2. Commit + Push（通过 GitHub Desktop 上传到 GitHub）→ 3. 等几十秒 → 4. 网站上就能看到了",
+    "tags": [
+      "Push"
+    ],
+
 ]
