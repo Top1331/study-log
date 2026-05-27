@@ -257,6 +257,208 @@
     margin-bottom: 8px;
   }
 
+  .add-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 20px;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 24px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.15s ease;
+    font-family: inherit;
+    margin-top: 12px;
+  }
+
+  .add-btn:hover {
+    background: #1d4ed8;
+  }
+
+  .add-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 100;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 60px 20px 20px;
+    overflow-y: auto;
+  }
+
+  .modal-overlay.open {
+    display: flex;
+  }
+
+  .modal {
+    background: var(--card);
+    border-radius: 16px;
+    width: 100%;
+    max-width: 520px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    animation: modalIn 0.2s ease;
+  }
+
+  @keyframes modalIn {
+    from { opacity: 0; transform: translateY(16px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px 0;
+  }
+
+  .modal-header h2 {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .modal-close {
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: var(--text3);
+    cursor: pointer;
+    padding: 4px;
+    line-height: 1;
+  }
+
+  .modal-close:hover { color: var(--text); }
+
+  .modal-body {
+    padding: 20px 24px 24px;
+  }
+
+  .form-group {
+    margin-bottom: 16px;
+  }
+
+  .form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text2);
+    margin-bottom: 6px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: inherit;
+    color: var(--text);
+    background: var(--bg);
+    outline: none;
+    transition: border-color 0.15s ease;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: var(--accent);
+  }
+
+  .form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+    line-height: 1.6;
+  }
+
+  .form-hint {
+    font-size: 12px;
+    color: var(--text3);
+    margin-top: 4px;
+  }
+
+  .modal-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 4px;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: inherit;
+    border: none;
+    transition: all 0.15s ease;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: #fff;
+  }
+
+  .btn-primary:hover { background: #1d4ed8; }
+
+  .btn-secondary {
+    background: var(--bg);
+    color: var(--text2);
+    border: 1px solid var(--border);
+  }
+
+  .btn-secondary:hover { background: var(--border); }
+
+  .result-area {
+    margin-top: 20px;
+    position: relative;
+  }
+
+  .result-area h3 {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text2);
+    margin-bottom: 8px;
+  }
+
+  .json-output {
+    background: #1e1e1e;
+    color: #d4d4d4;
+    padding: 16px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-family: "SF Mono", "Fira Code", "Consolas", monospace;
+    overflow-x: auto;
+    white-space: pre;
+    line-height: 1.5;
+  }
+
+  .copy-btn {
+    position: absolute;
+    top: 32px;
+    right: 12px;
+    background: #333;
+    color: #ccc;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 12px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.15s ease;
+  }
+
+  .copy-btn:hover { background: #444; color: #fff; }
+  .copy-btn.copied { background: #16a34a; color: #fff; }
+
   @media (max-width: 600px) {
     .container {
       padding: 24px 16px 60px;
@@ -287,6 +489,10 @@
   <header>
     <h1>学习日志</h1>
     <p>记录每一天的成长</p>
+    <button class="add-btn" id="openModal">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      添加记录
+    </button>
   </header>
 
   <div class="search-bar">
@@ -313,6 +519,43 @@
     <p>Made with curiosity | <a href="https://github.com/Top1331/study-log" target="_blank">GitHub</a></p>
   </div>
 
+</div>
+
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <div class="modal-header">
+      <h2>添加学习记录</h2>
+      <button class="modal-close" id="closeModal">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <label>日期</label>
+        <input type="date" id="formDate">
+      </div>
+      <div class="form-group">
+        <label>标题</label>
+        <input type="text" id="formTitle" placeholder="例如：学会了 Git 分支操作" maxlength="40">
+      </div>
+      <div class="form-group">
+        <label>内容</label>
+        <textarea id="formContent" placeholder="详细描述你今天学到了什么…" maxlength="300"></textarea>
+      </div>
+      <div class="form-group">
+        <label>标签</label>
+        <input type="text" id="formTags" placeholder="多个标签用逗号分隔，如：Git, VS Code">
+        <div class="form-hint">用逗号分隔，比如：Git, VS Code, 前端</div>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-secondary" id="closeModalBtn">取消</button>
+        <button class="btn btn-primary" id="generateBtn">生成 JSON 片段</button>
+      </div>
+      <div class="result-area" id="resultArea" style="display:none">
+        <h3>复制下面这段，粘贴到 data.json 的最前面</h3>
+        <div class="json-output" id="jsonOutput"></div>
+        <button class="copy-btn" id="copyBtn">复制</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -413,6 +656,86 @@
 
   renderTagFilters();
   render();
+
+  const modalOverlay = document.getElementById('modalOverlay');
+  const openModal = document.getElementById('openModal');
+  const closeModal = document.getElementById('closeModal');
+  const closeModalBtn = document.getElementById('closeModalBtn');
+  const generateBtn = document.getElementById('generateBtn');
+  const resultArea = document.getElementById('resultArea');
+  const jsonOutput = document.getElementById('jsonOutput');
+  const copyBtn = document.getElementById('copyBtn');
+
+  const formDate = document.getElementById('formDate');
+  const formTitle = document.getElementById('formTitle');
+  const formContent = document.getElementById('formContent');
+  const formTags = document.getElementById('formTags');
+
+  formDate.value = new Date().toISOString().slice(0, 10);
+
+  function openModalFn() {
+    modalOverlay.classList.add('open');
+    formDate.value = new Date().toISOString().slice(0, 10);
+    resultArea.style.display = 'none';
+    formTitle.value = '';
+    formContent.value = '';
+    formTags.value = '';
+  }
+
+  function closeModalFn() {
+    modalOverlay.classList.remove('open');
+  }
+
+  openModal.addEventListener('click', openModalFn);
+  closeModal.addEventListener('click', closeModalFn);
+  closeModalBtn.addEventListener('click', closeModalFn);
+  modalOverlay.addEventListener('click', (e) => {
+    if (e.target === modalOverlay) closeModalFn();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modalOverlay.classList.contains('open')) closeModalFn();
+  });
+
+  generateBtn.addEventListener('click', () => {
+    const title = formTitle.value.trim();
+    const content = formContent.value.trim();
+    const tagsRaw = formTags.value.trim();
+
+    if (!title || !content) {
+      alert('标题和内容不能为空');
+      return;
+    }
+
+    const tags = tagsRaw
+      ? tagsRaw.split(/[,，]/).map(t => t.trim()).filter(t => t)
+      : ['学习'];
+
+    const entry = {
+      date: formDate.value,
+      title: title,
+      content: content,
+      tags: tags
+    };
+
+    const jsonStr = JSON.stringify([entry], null, 2);
+    const snippet = jsonStr.slice(3, -3);
+
+    jsonOutput.textContent = '  ' + snippet.trim() + ',\n';
+    resultArea.style.display = 'block';
+  });
+
+  copyBtn.addEventListener('click', () => {
+    const text = jsonOutput.textContent;
+    navigator.clipboard.writeText(text).then(() => {
+      copyBtn.textContent = '已复制';
+      copyBtn.classList.add('copied');
+      setTimeout(() => {
+        copyBtn.textContent = '复制';
+        copyBtn.classList.remove('copied');
+      }, 2000);
+    });
+  });
 })();
 </script>
 </body>
