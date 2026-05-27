@@ -1,0 +1,38 @@
+[
+  {
+    "date": "2026-05-27",
+    "title": "认识 WorkBuddy — 我的 AI 搭档",
+    "content": "了解了 WorkBuddy 能做什么：直接操作电脑文件、生成 Word/Excel、联网搜索、写代码做网站、部署到临时链接。跟 Codex 的区别在于 WorkBuddy 住在本地电脑里，能直接读写文件，不只是编程工具。",
+    "tags": ["WorkBuddy", "AI"]
+  },
+  {
+    "date": "2026-05-27",
+    "title": "GitHub 入门 — 全球最大的代码图书馆",
+    "content": "理解了 GitHub 是什么：不只是程序员用的，普通人也能在上面下载软件（通过 Releases）。学会了区分「源代码项目」和「可下载的安装包」。掌握了 GitHub Desktop 的基本操作：Add Repository、Commit、Push。",
+    "tags": ["GitHub", "GitHub Desktop"]
+  },
+  {
+    "date": "2026-05-27",
+    "title": "Git vs GitHub — 终于分清了",
+    "content": "Git 是本地版本管理工具（安装在电脑上），GitHub 是云端代码托管平台（一个网站）。GitHub Desktop 自带 Git，但 VS Code 需要单独安装。公式：改代码 → Commit → Push → 同步到 GitHub。",
+    "tags": ["Git", "GitHub"]
+  },
+  {
+    "date": "2026-05-27",
+    "title": "VS Code 安装与配置",
+    "content": "下载安装了 VS Code，学会了打开项目文件夹、安装中文语言包、使用源代码管理面板进行 Git 操作。VS Code 比记事本强太多：代码高亮、自动补全、行号标注、Git 集成。",
+    "tags": ["VS Code", "工具"]
+  },
+  {
+    "date": "2026-05-27",
+    "title": "GitHub Pages — 免费的个人网站",
+    "content": "学会了用 GitHub Pages 把静态网页部署成真正的网站。在仓库 Settings → Pages → 选 main 分支 → Save，就能获得一个永久免费的公网地址。第一个上线的项目是个人名片网页。",
+    "tags": ["GitHub Pages", "部署"]
+  },
+  {
+    "date": "2026-05-27",
+    "title": "第一个 GitHub 项目 — 个人名片",
+    "content": "完成了人生第一个 GitHub 项目 my-card。完整的流程：创建 HTML/CSS 代码 → 用 GitHub Desktop 添加仓库 → Commit → Push → 启用 GitHub Pages → 获得公网链接 top1331.github.io/my-card。",
+    "tags": ["GitHub", "HTML", "CSS"]
+  }
+]
